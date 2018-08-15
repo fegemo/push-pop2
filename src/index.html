@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PushPop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC|Anonymous+Pro|Open+Sans+Condensed:300">
+  <link rel="stylesheet" href="assets/index.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to the <strong>OpenGL Matrices</strong> tutorial!</h1>
+    <div id="about">
+      <p>
+        This interactive exploration allows you to visualize what happens when
+        the matrix-related commands in (legacy) OpenGL are executed.
+      </p>
+    </div>
+  </header>
+  <main>
+    <section id="visualization-container">
+      <header>
+        <h2>OpenGL <strong>state</strong></h2>
+      </header>
+    </section>
+    <section id="matrix-container" style="display: none">
+      <h2>Working <strong>matrix</strong></h2>
+      <div class="matrix-input two-d">
+        <input value="1" type="number" id="r1c1">
+        <input value="0" type="number" id="r1c2">
+        <input value="0" type="number" id="r1c3">
+        <input value="0" type="number" id="r2c1">
+        <input value="1" type="number" id="r2c2">
+        <input value="0" type="number" id="r2c3">
+        <input value="0" type="number" id="r3c1">
+        <input value="0" type="number" id="r3c2">
+        <input value="1" type="number" id="r3c3">
+
+        <!-- <input value="1" type="number" id="r3c3">
+        <input value="1" type="number" id="r3c3">
+        <input value="1" type="number" id="r3c3">
+        <input value="1" type="number" id="r3c3">
+        <input value="1" type="number" id="r3c3">
+        <input value="1" type="number" id="r3c3">
+        <input value="1" type="number" id="r3c3"> -->
+      </div>
+      <p id="matrix-change-log">Initially there is the identity matrix</p>
+    </section>
+    <section id="program-container">
+      <header>
+        <h2>Source <strong>code</strong></h2>
+        <div class="toolbar">
+          <button><i class="fas fa-play"></i></button>
+          <button><i class="fas fa-stop"></i></button>
+          <button><i class="fas fa-trash-alt"></i></button>
+        </div>
+      </header>
+      <div class="opengl-code">
+        <code class="line-of-code">
+          <span class="statement opengl-command fixed">glClear(GL_COLOR_BUFFER_BIT);</span>
+        </code>
+        <code class="line-of-code add-indent">
+          <span class="statement opengl-command removable">glPushMatrix();</span>
+        </code>
+        <code class="line-of-code add-indent">
+          <span class="statement opengl-command removable" indentation="  ">glPushMatrix();</span>
+        </code>
+        <code class="line-of-code">
+          <span class="statement opengl-command removable" indentation="    ">glTranslatef(<span contenteditable="true" class="opengl-command-argument number editable">2</span>, <span class="opengl-command-argument number editable">0</span>, <span class="opengl-command-argument number editable">0</span>);</span>
+        </code>
+        <code class="line-of-code">
+          <span class="statement opengl-command removable" indentation="    ">glRotatef(<span class="opengl-command-argument number editable">45</span>, <span class="opengl-command-argument number editable">0</span>, <span class="opengl-command-argument number editable">0</span>, <span class="opengl-command-argument number editable">1</span>);</span>
+        </code>
+        <code class="line-of-code">
+          <span class="statement c-command fixed" indentation="    ">drawSomething();</span>
+        </code>
+        <code class="line-of-code remove-indent">
+          <span class="statement opengl-command removable" indentation="  ">glPopMatrix();</span>
+        </code>
+        <code class="line-of-code remove-indent">
+          <span class="statement opengl-command removable">glPopMatrix();</span>
+        </code>
+        <code class="line-of-code">
+          <span class="statement opengl-command fixed">glFlush();</span>
+        </code>
+        <code class="line-of-code add-indent">
+          <span class="statement opengl-command removable">glPushMatrix();</span>
+        </code>
+        <code class="line-of-code">
+          <span class="statement opengl-command removable" indentation="  ">glTranslatef(<span class="opengl-command-argument number editable">2</span>, <span class="opengl-command-argument number editable">0</span>, <span class="opengl-command-argument number editable">0</span>);</span>
+        </code>
+        <code class="line-of-code">
+          <span class="statement opengl-command removable" indentation="  ">glRotatef(<span class="opengl-command-argument number editable">45</span>, <span class="opengl-command-argument number editable">0</span>, <span class="opengl-command-argument number editable">0</span>, <span class="opengl-command-argument number editable">1</span>);</span>
+        </code>
+        <code class="line-of-code">
+          <span class="statement c-command fixed" indentation="  ">drawSomething();</span>
+        </code>
+        <code class="line-of-code remove-indent">
+          <span class="statement opengl-command removable">glPopMatrix();</span>
+        </code>
+      </div>
+    </section>
+    <section id="documentation-container">
+      <header>
+        <h2>OpenGL <strong>commands</strong></h2>
+      </header>
+      <p>docs here</p>
+    </section>
+    <section id="controls-container" style="display: none">
+      <header>
+        <h2>OpenGL <strong>commands</strong></h2>
+      </header>
+      <div class="opengl-command-container">
+        <label>
+          <button>➕</button>
+          <code>glPushMatrix()</code>
+        </label>
+      </div>
+      <div class="opengl-command-container">
+        <label>
+          <button>➕</button>
+          <code>glPopMatrix()</code>
+        </label>
+      </div>
+      <div class="opengl-command-container">
+        <label>
+          <button>➕</button>
+          <code>glLoadMatrixf(*m)</code>
+        </label>
+      </div>
+      <div class="opengl-command-container">
+        <label>
+          <button>➕</button>
+          <code>glLoadIdentity()</code>
+        </label>
+      </div>
+      <div class="opengl-command-container">
+        <label>
+          <button>➕</button>
+          <code>glMultiMatrixf(*m)</code>
+        </label>
+      </div>
+      <div class="opengl-command-container">
+        <label>
+          <button>➕</button>
+          <code>glTranslatef(x, y, z)</code>
+        </label>
+      </div>
+      <div class="opengl-command-container">
+        <label>
+          <button>➕</button>
+          <code>glScalef(x, y, z)</code>
+        </label>
+      </div>
+      <div class="opengl-command-container">
+        <label>
+          <button>➕</button>
+          <code>glRotatef(angle, x, y, z)</code>
+        </label>
+      </div>
+      <div class="opengl-command-container">
+        <label>
+          <button>➕</button>
+          <code>glMatrixMode(mode)</code>
+        </label>
+      </div>
+    </section>
+  </main>
+  <div class="toolbar-fab toolbar" id="fab-toolbar">
+    <button id="play"><i class="fas fa-play"></i></button>
+    <button id="stop"><i class="fas fa-stop"></i></button>
+    <button id="clear"><i class="fas fa-trash-alt"></i></button>
+  </div>
+</body>
+</html>

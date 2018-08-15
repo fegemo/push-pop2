@@ -1,0 +1,15 @@
+:root {
+  /* colors */
+  --main-color: #ffdf26;
+  --shadow-color: #0002;
+
+  /* sizes, spacing */
+  --base-font-size: 18px;
+  --header-height: auto;
+  --opengl-state-min-width: 14rem;
+}
+
+@media (max-device-width: 640px) {
+  :root {
+  }
+}

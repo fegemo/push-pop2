@@ -1,0 +1,60 @@
+.toolbar-fab {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  font-size: 3em;
+  width: 1em;
+  height: 1em;
+}
+
+.toolbar-fab:hover {
+  /* fab with 3 buttons, thus 3em */
+  height: 3em;
+}
+
+.toolbar-fab > button {
+  position: absolute;
+  right: calc(50% - 0.5em);
+  bottom: 0;
+  width: 1em;
+  height: 1em;
+  box-sizing: border-box;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-width: 0;
+  background: var(--main-color);
+  box-shadow: 2px 2px 5px var(--shadow-color);
+  cursor: pointer;
+  opacity: 0;
+  transition: all 200ms ease;
+}
+
+.toolbar-fab:hover > button {
+  opacity: 1;
+  z-index: 0;
+}
+
+.toolbar-fab > button > i {
+  font-size: 50%;
+}
+
+.toolbar-fab > button:first-of-type {
+  font-size: 100%;
+  opacity: 1;
+  z-index: 1;
+}
+
+.toolbar-fab > button + button {
+  font-size: 50%;
+}
+
+/* these values were specifically crafted for a 3 buttons fab */
+.toolbar-fab:hover > button + button {
+  transform: translateY(calc(-50% - 1.75em));
+}
+
+.toolbar-fab:hover > button + button + button {
+  transform: translateY(calc(-50% - 3em));
+}

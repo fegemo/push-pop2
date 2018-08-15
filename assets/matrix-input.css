@@ -1,0 +1,52 @@
+
+.matrix-input {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 1rem;
+  margin: 0 auto;
+}
+
+.matrix-input.two-d {
+  width: calc(3 * 2.5em);
+  height: calc(3 * 2.5em);
+}
+
+.matrix-input.three-d {
+  width: calc(4 * 2.5em);
+}
+
+.matrix-input input[type="number"] {
+  font-size: inherit;
+  width: 2em;
+  height: 2em;
+  border: 1px solid silver;
+  text-align: center;
+  border-radius: 0.15em;
+
+  /* to hide the spinner arrows in Firefox */
+  display: block;
+  -moz-appearance: textfield;
+}
+
+/* to hide spinner arrows in Webkit based browsers */
+.matrix-input input::-webkit-outer-spin-button,
+.matrix-input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.matrix-input.two-d input[type="number"] {
+  /* flex-basis: 33%; */
+}
+.matrix-input.three-d input[type="number"] {
+  /* flex-basis: 25%; */
+}
+
+.matrix-input input[type="number"]:nth-last-of-type(1),
+.matrix-input input[type="number"]:nth-last-of-type(2),
+.matrix-input input[type="number"]:nth-last-of-type(3),
+.matrix-input.three-d input[type="number"]:nth-last-of-type(4) {
+  background-color: rgba(255, 255, 255, 0.8);
+}

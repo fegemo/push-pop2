@@ -1,0 +1,33 @@
+
+html {
+  font-size: var(--base-font-size);
+}
+
+body {
+  font-family: 'Open Sans Condensed', serif;
+  color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.25em;
+}
+
+h1, h2 {
+  font-family: 'Amatic SC', cursive;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+code {
+  font-family: 'Anonymous Pro', monospace;
+}
+
+strong {
+  color: var(--main-color);
+}
+
+#controls-container button {
+  font-family: "Anonymous Pro", monospace;
+}

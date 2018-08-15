@@ -1,0 +1,49 @@
+
+body {
+  background: linear-gradient(to bottom, #2A363B, #99B898);
+  width: 100%;
+}
+
+body > header > h1 {
+  text-align: center;
+  text-shadow: 0.05em 0.05em 0.05em var(--shadow-color);
+}
+
+#about {
+  padding: 0.25em 1em;
+}
+
+#visualization-container {
+  border: 6px solid var(--main-color);
+  box-shadow: 0.15rem 0.15rem 0.15rem var(--shadow-color);
+  background-color: #f3efda60;
+  border-radius: 1rem;
+}
+
+#program-container > header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#program-container > .toolbar {
+  align-self: center;
+}
+
+#matrix-container {
+  text-align: center;
+}
+
+#matrix-change-log::before {
+  content: "ℹ️";
+  display: inline-block;
+  font-size: 0.5em;
+  margin-right: 0.5em;
+  border-radius: 50%;
+  padding: 0.15em;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  border: 1px solid currentColor;
+  opacity: 0.75;
+}
